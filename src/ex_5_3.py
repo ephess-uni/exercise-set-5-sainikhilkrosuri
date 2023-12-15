@@ -13,17 +13,9 @@ if __name__ == "__main__":
     parser.add_argument("infile", help="Input filename for the data file that needs to be processed.")
     parser.add_argument("outfile", help="Output filename.")
 
-    args = parser.parse_args()
-
-    # Load data from the input file
-    data = np.loadtxt(args.infile)
-
-    # Calculate mean and standard deviation
-    mean = np.mean(data)
-    std = np.std(data)
-
-    # Shift data to have a mean of 0 and scale to have a standard deviation of 1
-    processed = (data - mean) / std
-
-    # Save the processed output to the specified output file
+    args_file = parser.parse_args()
+    data_main = np.loadtxt(args_file.infile)
+    mean_dt = np.mean(data_main)
+    std_dt = np.std(data_main)
+    processed = (data_main - mean_dt) / std_dt
     np.savetxt(args.outfile, processed)
