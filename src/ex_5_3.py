@@ -15,7 +15,7 @@ if __name__ == "__main__":
 
     args_file = parser.parse_args()
     data_main = np.loadtxt(args_file.infile)
-    mean_dt = np.mean(data_main)
-    std_dt = np.std(data_main)
-    processed = (data_main - mean_dt) / std_dt
+    mean = np.mean(data_main)
+    std = np.std(data_main)
+    processed = (data_main - mean) / std
     np.savetxt(args.outfile, processed)
