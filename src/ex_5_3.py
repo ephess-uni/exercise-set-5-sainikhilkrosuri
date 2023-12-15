@@ -13,9 +13,9 @@ if __name__ == "__main__":
     parser.add_argument("infile", help="Input filename for the data file that needs to be processed.")
     parser.add_argument("outfile", help="Output filename.")
 
-    args_file = parser.parse_args()
-    data_main = np.loadtxt(args_file.infile)
-    mean = np.mean(data_main)
-    std = np.std(data_main)
-    processed = (data_main - mean) / std
+    args = parser.parse_args()
+    data = np.loadtxt(args.infile)
+    mean = np.mean(data)
+    std = np.std(data)
+    processed = (data - mean) / std
     np.savetxt(args.outfile, processed)
