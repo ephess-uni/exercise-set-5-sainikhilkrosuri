@@ -16,11 +16,6 @@ output_dir = root_dir / "outputs"
 input_file = data_dir / "ex_5_4-data.csv"
 output_file = output_dir / "ex_5_4-processed.csv"
 
-# Load the data from input_file
-data = np.loadtxt(input_file, delimiter=',')
-
-# Set negative elements to zero
-data[data < 0] = 0
-
-# Save the processed array to output_file
-np.savetxt(output_file, data, delimiter=',')
+data_main = np.loadtxt(input_file, delimiter=',')
+data_main[data_main < 0] = 0
+np.savetxt(output_file, data_main, delimiter=',')
