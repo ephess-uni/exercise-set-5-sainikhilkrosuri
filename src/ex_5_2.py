@@ -21,8 +21,8 @@ if __name__ == "__main__":
     root_dir = get_repository_root()
     INFILE = root_dir / "data" / "ex_5_2-data.csv"
     OUTFILE = root_dir / "outputs" / "ex_5_2-processed.csv"
-    data = np.loadtxt(INFILE)
-    mean = np.mean(data)
-    std = np.std(data)
-    processed = (data - mean) / std
+    data_main = np.loadtxt(INFILE)
+    mean_dt = np.mean(data_main)
+    std_dt = np.std(data_main)
+    processed = (data_main - mean_dt) / std_dt
     np.savetxt(OUTFILE, processed)
