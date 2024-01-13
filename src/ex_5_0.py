@@ -2,7 +2,10 @@
 
 
 def line_count(infile):
-    pass
+    with open(infile, 'r') as file:
+        lines = file.readlines()
+        line_count = len(lines)
+        print(line_count)
 
 
 if __name__ == "__main__":
@@ -11,7 +14,6 @@ if __name__ == "__main__":
         from src.util import get_repository_root
     except ImportError:
         from util import get_repository_root
-
-    # Test line_count with a file from the data directory
-    data_directory = get_repository_root() / "data"
-    line_count(data_directory / "ex_5_2-data.csv")
+        
+    data_directory_main = get_repository_root() / "data"
+    line_count(data_directory_main / "ex_5_2-data.csv")
