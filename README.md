@@ -1,6 +1,14 @@
 # ex_5_0.py
 In a module named ex_5_0.py, implement a function `line_count(infile)` that meets the following requirements:
 
+
+
+
+
+
+
+
+
 - takes an input filename `infile`
 - opens the file
 - counts the number of lines present in the file. *Hint: use readlines()*
